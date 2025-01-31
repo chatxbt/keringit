@@ -67,6 +67,6 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-emerald-50 text-black;
+    @apply bg-[#eefaf4] text-black;
   }
 }
