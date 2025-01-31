@@ -4,6 +4,7 @@ import { useState } from "react";
 import { BookOpen, Download, Copy } from "lucide-react";
 
 import { ThemeButton } from "../ui/theme-button";
+import { useToggle } from "usehooks-ts";
 
 export function LandingPage() {
   const [repoUrl, setRepoUrl] = useState("");
@@ -14,7 +15,7 @@ export function LandingPage() {
     console.log("Submitted repo:", repoUrl);
   };
 
-  const [show, setShow] = useState(false);
+  const [show] = useToggle(false);
 
   return (
     <div>
