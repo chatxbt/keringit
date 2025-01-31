@@ -70,3 +70,9 @@ body {
     @apply bg-[#eefaf4] text-black;
   }
 }
+
+@layer components {
+  .box {
+    @apply border-[3px] border-black shadow-theme rounded-sm;
+  }
+}

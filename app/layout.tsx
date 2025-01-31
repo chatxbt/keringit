@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${quicksand.className} antialiased`}>
         <NavBar />
-        <main>{children}</main>
+        <main style={{ minHeight: "calc(100vh - 10rem)" }}>{children}</main>
         <Footer />
       </body>
     </html>

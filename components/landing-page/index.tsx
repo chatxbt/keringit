@@ -1,21 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { BookOpen } from "lucide-react";
-// import { FileCode, FolderTree, Send, Rocket, BookOpen } from "lucide-react";
+import { BookOpen, Download, Copy } from "lucide-react";
 
-// import { Button } from "@/components/ui/button";
-// import { Input } from "@/components/ui/input";
-// import { ScrollArea } from "@/components/ui/scroll-area";
-// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ThemeButton } from "../ui/theme-button";
 
 export function LandingPage() {
   const [repoUrl, setRepoUrl] = useState("");
-  // const [messages, setMessages] = useState<
-  //   { role: "user" | "assistant"; content: string }[]
-  // >([]);
-  // const [inputMessage, setInputMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,17 +14,10 @@ export function LandingPage() {
     console.log("Submitted repo:", repoUrl);
   };
 
-  // const handleChat = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   if (!inputMessage.trim()) return;
-
-  //   setMessages([...messages, { role: "user", content: inputMessage }]);
-  //   setInputMessage("");
-  //   // Add AI response logic here
-  // };
+  const [show, setShow] = useState(false);
 
   return (
-    <div className="min-h-screen">
+    <div>
       <div className="max-w-5xl mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-12 relative">
@@ -43,12 +27,28 @@ export function LandingPage() {
             xmlns="http://www.w3.org/2000/svg"
             className="h-auto w-20 sm:w-24 md:w-28 flex-shrink-0 md:relative sm:absolute lg:absolute left-0 lg:-translate-x-full lg:ml-32 md:translate-x-10 sm:-translate-y-16 md:-translate-y-0 -translate-x-2 lg:translate-y-10"
           >
-            <circle cx="50" cy="50" r="45" fill="#eefaf4" />
+            {/* <circle cx="50" cy="50" r="45" fill="#eefaf4" />
             <path
               d="M35 35 L50 35 L50 50 L35 50 Z M50 50 L65 50 L65 65 L50 65 Z M35 65 L50 65 L50 80 L35 80 Z M65 20 L80 20 L80 35 L65 35 Z"
               fill="#00B4D8"
               stroke="black"
-              stroke-width="2"
+              strokeWidth="2"
+            /> */}
+
+            <circle cx="50" cy="50" r="45" fill="#eefaf4" />
+            <path
+              d="M50 50 C40 30, 60 30, 50 10 M50 50 C70 40, 70 60, 90 50 M50 50 C60 70, 40 70, 50 90 M50 50 C30 60, 30 40, 10 50"
+              fill="#FB5607"
+              stroke="black"
+              strokeWidth="2"
+            />
+            <circle
+              cx="50"
+              cy="50"
+              r="8"
+              fill="#FB5607"
+              stroke="black"
+              strokeWidth="2"
             />
           </svg>
           <h1 className="text-4xl xs:text-5xl md:text-6xl font-extrabold text-center mb-4">
@@ -56,17 +56,17 @@ export function LandingPage() {
             <br />
             Repository
           </h1>
-          <p className="text-lg text-black/60 max-w-2xl mx-auto">
+          <p className="text-lg text-black/60 max-w-2xl mx-auto font-semibold">
             Transform your GitHub repositories into interactive documentation
             and deploy custom versions with AI assistance.
           </p>
         </div>
 
-        <div className="py-8 px-10 shadow-theme mb-8 rounded-xl border-[3px] bg-[#CAF0F8] border-black">
+        <div className="py-8 px-10 mb-8 rounded-xl bg-[#CAF0F8] box">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Url Input */}
             <div className="flex w-full flex-col sm:flex-row gap-8 items-center justify-center sm:max-w-4xl mx-auto">
-              <div className="flex-1 w-full border-[3px] bg-white flex items-center justify-start border-black rounded-sm shadow-theme">
+              <div className="flex-1 w-full box bg-white flex items-center justify-start">
                 <input
                   placeholder="Enter GitHub repository URL"
                   value={repoUrl}
@@ -74,20 +74,15 @@ export function LandingPage() {
                   className="w-full shadow-none bg-white border-none bg-transparent outline-none p-4 text-2xl font-semibold placeholder:text-gray-500 placeholder:text-xl placeholder:font-normal"
                 />
               </div>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                type="submit"
-                className="border-[3px] bg-[#7D80DA] p-4 text-2xl rounded-sm shadow-theme items-center justify-center flex h-full border-black text-[#1B4332] gap-2 font-bold w-full sm:w-fit"
-              >
+              <ThemeButton>
                 <BookOpen className="h-5 w-5" />
                 Go
-              </motion.button>
+              </ThemeButton>
             </div>
 
             {/* Options input */}
             <div className="flex flex-col sm:flex-row gap-x-16 gap-y-4">
-              <div className="flex shadow-theme bg-white rounded overflow-hidden border-[3px] border-black">
+              <div className="flex shadow-theme bg-white rounded overflow-hidden box p-0">
                 <select
                   name="options"
                   id="options"
@@ -114,7 +109,7 @@ export function LandingPage() {
                   </span>
                 </label>
                 <div className="h-3.5 border-[3px] border-black relative bg-[#E76F51]">
-                  <div className="w-12 bg-[#B7E4C7] cursor-pointer absolute top-1/2 -translate-y-1/2 right-0 h-5 shadow-theme border-[3px] border-black" />
+                  <div className="w-12 bg-[#B7E4C7] cursor-pointer absolute top-1/2 -translate-y-1/2 right-0 h-5 box p-0 rounded-none" />
                 </div>
               </div>
             </div>
@@ -138,6 +133,65 @@ export function LandingPage() {
         </div>
 
         {/* Main Content Area */}
+        {show && (
+          <div className="mt-24 rounded-xl shadow-theme border-[3px] border-black p-8 bg-white">
+            <div className="space-y-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Left Panel - Repository Content */}
+                <div className="flex flex-col gap-6">
+                  <div className="font-bold text-2xl lg:py-2">Summary</div>
+
+                  <div className="box p-4 font-mono min-h-[200px] bg-[#CAF0F8]">
+                    <p>Repository: </p>
+                    <p>Files analyzed: </p>
+                    <p className="mt-10">Estimated tokens: </p>
+                  </div>
+
+                  <div className="space-x-4 flex w-full">
+                    <ThemeButton className="text-lg py-2 text-black bg-[#F4A261]">
+                      <Download />
+                      Download
+                    </ThemeButton>
+                    <ThemeButton className="text-lg py-2 text-black bg-[#F4A261]">
+                      <Copy />
+                      Copy All
+                    </ThemeButton>
+                  </div>
+                </div>
+
+                {/* Right Panel - Repository Content */}
+                <div className="flex flex-col gap-6">
+                  <div className="font-bold text-2xl flex justify-between items-center w-full">
+                    Directory Structure
+                    <ThemeButton className="text-lg py-2 text-black bg-[#F4A261]">
+                      <Copy />
+                      Copy All
+                    </ThemeButton>
+                  </div>
+
+                  <textarea
+                    readOnly
+                    className="box p-4 font-mono relative resize-y w-full overflow-y-auto h-[270px] bg-[#CAF0F8] outline-none"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <div className="font-bold text-2xl flex justify-between items-center w-full mb-4">
+                  Files Content
+                  <ThemeButton className="text-lg py-2 text-black bg-[#F4A261]">
+                    <Copy />
+                    Copy
+                  </ThemeButton>
+                </div>
+                <textarea
+                  readOnly
+                  className="p-4 min-h-[500px] w-full overflow-y-auto resize-y box bg-[#CAF0F8]"
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
