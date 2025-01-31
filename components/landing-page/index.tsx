@@ -1,10 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { BookOpen, Download, Copy } from "lucide-react";
+import { BookOpen, Download, Copy, Send } from "lucide-react";
+import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 import { ThemeButton } from "../ui/theme-button";
-import { useToggle } from "usehooks-ts";
+import { ScrollArea } from "../ui/scroll-area";
+import { useChatInput } from "@/lib/hooks";
+import { Textarea } from "../ui/textarea";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export function LandingPage() {
   const [repoUrl, setRepoUrl] = useState("");
@@ -15,11 +21,17 @@ export function LandingPage() {
     console.log("Submitted repo:", repoUrl);
   };
 
-  const [show] = useToggle(false);
+  const [activeTab, setActiveTab] = useState<SummaryTabs>("summary");
+  const toggleTabs = (tab: SummaryTabs) => setActiveTab(tab);
+
+  const {
+    actions: { handleChange, handleKeyDown },
+    states: { inputConRef, userInput, buttonRef, textareaRef },
+  } = useChatInput();
 
   return (
     <div>
-      <div className="max-w-5xl mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-12 relative">
           <svg
@@ -133,67 +145,170 @@ export function LandingPage() {
           </form>
         </div>
 
-        {/* Main Content Area */}
-        {show && (
-          <div className="mt-24 rounded-xl shadow-theme border-[3px] border-black p-8 bg-white">
-            <div className="space-y-16">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Left Panel - Repository Content */}
-                <div className="flex flex-col gap-6">
-                  <div className="font-bold text-2xl lg:py-2">Summary</div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-24">
+          <div className="">
+            {/* Left Panel - Repository Content */}
+            <h2 className="font-bold text-xl mb-1">Result</h2>
 
-                  <div className="box p-4 font-mono min-h-[200px] bg-[#CAF0F8]">
-                    <p>Repository: </p>
-                    <p>Files analyzed: </p>
-                    <p className="mt-10">Estimated tokens: </p>
+            <div className="box p-4 bg-white">
+              <div className="box mb-4 p-1 flex gap-1">
+                <button
+                  className={cn(
+                    "flex-1 flex-shrink-0 box shadow-none font-semibold",
+                    activeTab === "summary"
+                      ? "bg-[#7D80DA] text-white"
+                      : "bg-transparent"
+                  )}
+                  onClick={() => toggleTabs("summary")}
+                >
+                  Summary
+                </button>
+                <button
+                  className={cn(
+                    "flex-1 flex-shrink-0 box shadow-none font-semibold",
+                    activeTab === "content"
+                      ? "bg-[#7D80DA] text-white"
+                      : "bg-transparent"
+                  )}
+                  onClick={() => toggleTabs("content")}
+                >
+                  File Content
+                </button>
+              </div>
+              {activeTab === "summary" && (
+                <div>
+                  <div className="flex flex-col gap-4">
+                    <div className="box shadow-none p-4 font-mono min-h-[200px] bg-[#CAF0F8]">
+                      <p>Repository: </p>
+                      <p>Files analyzed: </p>
+                      <p className="mt-10">Estimated tokens: </p>
+                    </div>
+                    <div className="space-x-4 flex w-full">
+                      <ThemeButton className="text-base py-2 text-black bg-[#F4A261]">
+                        <Download />
+                        Download
+                      </ThemeButton>
+                      <ThemeButton className="text-base py-2 text-black bg-[#F4A261]">
+                        <Copy />
+                        Copy
+                      </ThemeButton>
+                    </div>
                   </div>
-
-                  <div className="space-x-4 flex w-full">
-                    <ThemeButton className="text-lg py-2 text-black bg-[#F4A261]">
-                      <Download />
-                      Download
-                    </ThemeButton>
-                    <ThemeButton className="text-lg py-2 text-black bg-[#F4A261]">
-                      <Copy />
-                      Copy All
-                    </ThemeButton>
+                  <div className="flex flex-col gap-5 mt-20">
+                    <div className="font-bold text-xl flex justify-between items-center w-full">
+                      Directory Structure
+                      <ThemeButton className="text-base py-2 text-black bg-[#F4A261]">
+                        <Copy />
+                        Copy All
+                      </ThemeButton>
+                    </div>
+                    <textarea
+                      readOnly
+                      className="box shadow-none p-4 font-mono relative resize-y w-full overflow-y-auto h-[270px] bg-[#CAF0F8] outline-none"
+                    />
                   </div>
                 </div>
+              )}
 
-                {/* Right Panel - Repository Content */}
-                <div className="flex flex-col gap-6">
-                  <div className="font-bold text-2xl flex justify-between items-center w-full">
-                    Directory Structure
-                    <ThemeButton className="text-lg py-2 text-black bg-[#F4A261]">
-                      <Copy />
-                      Copy All
-                    </ThemeButton>
-                  </div>
-
+              {activeTab === "content" && (
+                <div className="mt-10">
+                  <ThemeButton className="text-base ml-auto mb-4 py-2 text-black bg-[#F4A261]">
+                    <Copy />
+                    Copy All
+                  </ThemeButton>
                   <textarea
                     readOnly
-                    className="box p-4 font-mono relative resize-y w-full overflow-y-auto h-[270px] bg-[#CAF0F8] outline-none"
+                    className="p-4 min-h-[500px] shadow-none w-full overflow-y-auto resize-y box bg-[#CAF0F8]"
+                    value="No contents loaded yet..."
                   />
                 </div>
-              </div>
-
-              <div>
-                <div className="font-bold text-2xl flex justify-between items-center w-full mb-4">
-                  Files Content
-                  <ThemeButton className="text-lg py-2 text-black bg-[#F4A261]">
-                    <Copy />
-                    Copy
-                  </ThemeButton>
-                </div>
-                <textarea
-                  readOnly
-                  className="p-4 min-h-[500px] w-full overflow-y-auto resize-y box bg-[#CAF0F8]"
-                />
-              </div>
+              )}
             </div>
           </div>
-        )}
+
+          {/* Chat UI */}
+          <div className="flex flex-col">
+            <div className="relative flex justify-between">
+              <h2 className="text-xl font-semibold mb-1">
+                Ask <strong className="font-bold">Kerin</strong>!😊
+              </h2>
+              <svg
+                viewBox="0 0 100 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-auto w-20 sm:w-24 md:w-28 flex-shrink-0 absolute -right-4 -bottom-12 md:-bottom-16 z-10  pointer-events-none"
+              >
+                <circle cx="50" cy="50" r="45" fill="none" />
+                <path
+                  d="M50 30 C60 20, 70 20, 70 30 C70 40, 50 50, 50 50 C50 50, 30 40, 30 30 C30 20, 40 20, 50 30 M50 50 C60 40, 70 40, 70 50 C70 60, 50 70, 50 70 C50 70, 30 60, 30 50 C30 40, 40 40, 50 50"
+                  fill="#FF006E"
+                  stroke="black"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+
+            <ScrollArea className="flex-1 min-h-[300px] max-h-[500px] bg-[#D8F3DC] overflow-y-auto mb-4 p-4 rounded-md box text-sm">
+              <div className="space-y-4">
+                <div className="flex gap-2 items-center">
+                  <div className="bg-black rounded-full">
+                    <Image
+                      src="/kerin.jpg"
+                      alt="@Kerin"
+                      className="w-8 h-8 border border-[#fbdfd2]/20 rounded-full object-cover object-center"
+                      width={50}
+                      height={50}
+                    />
+                  </div>
+                  <div className="flex-1 text-left font-semibold max-w-fit">
+                    <Typewriter
+                      options={{
+                        strings: "Hi, I’m Kerin! How can I help you today?",
+                        autoStart: true,
+                        delay: 10,
+                        cursor: "",
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </ScrollArea>
+
+            <form className="flex gap-2">
+              <div
+                className="flex w-full flex-col sm:flex-row gap-4 items-center justify-center sm:max-w-4xl mx-auto"
+                ref={inputConRef}
+              >
+                <div className="flex-1 w-full box bg-white flex items-center justify-start">
+                  <Textarea
+                    placeholder="Ask about the repository or request changes..."
+                    className="w-full resize-none overflow-y-auto max-h-28 min-h-fit p-4 flex-1 placeholder:text-gray-500 disabled:opacity-100 focus-visible:ring-0 border-none ring-0 placeholder:font-mono"
+                    onChange={handleChange}
+                    onKeyDown={handleKeyDown}
+                    value={userInput}
+                    rows={1}
+                    // disabled
+                    // disabled={!isMounted}
+                    // aria-disabled={!isMounted}
+                    ref={textareaRef}
+                  />
+                </div>
+
+                <motion.button
+                  className="bg-[#00B4D8] px-2.5 xs:px-4 flex items-center justify-center gap-1 rounded-md text-black hover:bg-[#2da7bf] disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shrink-0 box py-3.5 font-semibold"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  ref={buttonRef}
+                >
+                  <Send className="h-4 w-4" /> Go!
+                </motion.button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
+
+//

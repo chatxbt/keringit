@@ -22,7 +22,7 @@ export const ThemeButton = ({
       onClick={onClick}
       type={type}
       className={cn(
-        "box bg-[#7D80DA] p-4 text-2xl items-center justify-center flex h-full text-[#1B4332] gap-2 font-bold w-full sm:w-fit",
+        "box bg-[#7D80DA] p-4 text-2xl items-center justify-center flex h-full text-black gap-2 font-bold w-full sm:w-fit",
         className
       )}
     >
