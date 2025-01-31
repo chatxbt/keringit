@@ -75,7 +75,7 @@ export function LandingPage() {
           </p>
         </div>
 
-        <div className="py-8 px-10 mb-8 rounded-xl bg-[#CAF0F8] box">
+        <div className="py-8 px-4 sm:px-10 mb-8 rounded-xl bg-[#CAF0F8] box">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Url Input */}
             <div className="flex w-full flex-col sm:flex-row gap-8 items-center justify-center sm:max-w-4xl mx-auto">
@@ -279,7 +279,7 @@ export function LandingPage() {
                 className="flex w-full flex-col sm:flex-row gap-4 items-center justify-center sm:max-w-4xl mx-auto"
                 ref={inputConRef}
               >
-                <div className="flex-1 w-full box bg-white flex items-center justify-start">
+                <div className="flex-1 w-full box bg-white flex flex-col sm:flex-row items-center justify-start">
                   <Textarea
                     placeholder="Ask about the repository or request changes..."
                     className="w-full resize-none overflow-y-auto max-h-28 min-h-fit p-4 flex-1 placeholder:text-gray-500 disabled:opacity-100 focus-visible:ring-0 border-none ring-0 placeholder:font-mono"
@@ -295,7 +295,7 @@ export function LandingPage() {
                 </div>
 
                 <motion.button
-                  className="bg-[#00B4D8] px-2.5 xs:px-4 flex items-center justify-center gap-1 rounded-md text-black hover:bg-[#2da7bf] disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shrink-0 box py-3.5 font-semibold"
+                  className="bg-[#00B4D8] px-2.5 xs:px-4 flex items-center justify-center gap-1 rounded-md text-black hover:bg-[#2da7bf] disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shrink-0 box py-3.5 font-semibold w-full sm:w-fit"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   ref={buttonRef}
