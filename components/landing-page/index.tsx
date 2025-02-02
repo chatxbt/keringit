@@ -202,7 +202,7 @@ export function LandingPage() {
                   <div className="flex flex-col gap-5 mt-20">
                     <div className="font-bold text-xl flex justify-between items-center w-full">
                       Directory Structure
-                      <ThemeButton className="text-base py-2 text-black bg-[#F4A261]">
+                      <ThemeButton className="text-base w-fit py-2 text-black bg-[#F4A261]">
                         <Copy />
                         Copy All
                       </ThemeButton>
