@@ -287,7 +287,7 @@ export function LandingPage() {
                 <div className="flex-1 w-full box bg-white flex flex-col sm:flex-row items-center justify-start">
                   <Textarea
                     placeholder="Ask about the repository or request changes..."
-                    className="w-full resize-none overflow-y-auto max-h-28 min-h-fit p-4 flex-1 placeholder:text-gray-500 disabled:opacity-100 focus-visible:ring-0 border-none ring-0 placeholder:font-mono placeholder:text-sm min-[420px]:placeholder:text-sm"
+                    className="w-full resize-none overflow-y-auto max-h-28 min-h-fit p-4 flex-1 placeholder:text-gray-500 disabled:opacity-100 focus-visible:ring-0 border-none ring-0 placeholder:font-mono placeholder:text-xs min-[420px]:placeholder:text-sm"
                     onChange={handleChange}
                     onKeyDown={handleKeyDown}
                     value={userInput}
