@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BookOpen, Download, Copy, Send } from "lucide-react";
+import { BookOpen, Download, Copy, Send, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 
@@ -75,10 +75,10 @@ export function LandingPage() {
           </p>
         </div>
 
-        <div className="py-8 px-4 sm:px-10 mb-8 rounded-xl bg-[#CAF0F8] box">
+        <div className="py-8 px-4 sm:px-11 md:px-16 mb-8 rounded-xl bg-[#CAF0F8] box">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Url Input */}
-            <div className="flex w-full flex-col sm:flex-row gap-8 items-center justify-center sm:max-w-4xl mx-auto">
+            <div className="flex w-full flex-col sm:flex-row gap-8 items-center justify-center">
               <div className="flex-1 w-full box bg-white flex items-center justify-start">
                 <input
                   placeholder="Enter GitHub repository URL"
@@ -96,15 +96,20 @@ export function LandingPage() {
             {/* Options input */}
             <div className="flex flex-col sm:flex-row gap-x-16 gap-y-4">
               <div className="flex shadow-theme bg-white rounded overflow-hidden box p-0">
-                <select
-                  name="options"
-                  id="options"
-                  defaultValue="exclude"
-                  className="p-2 border-r-[3px] border-black outline-none"
-                >
-                  <option value="exclude">Exclude</option>
-                  <option value="include">Include</option>
-                </select>
+                <div className="relative border-r-[3px] border-black w-fit">
+                  <select
+                    name="options"
+                    id="options"
+                    defaultValue="exclude"
+                    className="p-2 pr-8 bg-[#E6E8EB] text-black [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden outline-none !rounded-none"
+                  >
+                    <option value="exclude">Exclude</option>
+                    <option value="include">Include</option>
+                  </select>
+                  <div className="absolute inset-y-0 right-2 flex items-center pointer-events-none">
+                    <ChevronDown className="w-4 h-4 text-gray-600" />
+                  </div>
+                </div>
                 <input
                   type="text"
                   name="file_type"
@@ -212,7 +217,7 @@ export function LandingPage() {
 
               {activeTab === "content" && (
                 <div className="mt-10">
-                  <ThemeButton className="text-base ml-auto mb-4 py-2 text-black bg-[#F4A261]">
+                  <ThemeButton className="text-base w-fit ml-auto mb-4 py-2 text-black bg-[#F4A261]">
                     <Copy />
                     Copy All
                   </ThemeButton>
@@ -282,7 +287,7 @@ export function LandingPage() {
                 <div className="flex-1 w-full box bg-white flex flex-col sm:flex-row items-center justify-start">
                   <Textarea
                     placeholder="Ask about the repository or request changes..."
-                    className="w-full resize-none overflow-y-auto max-h-28 min-h-fit p-4 flex-1 placeholder:text-gray-500 disabled:opacity-100 focus-visible:ring-0 border-none ring-0 placeholder:font-mono"
+                    className="w-full resize-none overflow-y-auto max-h-28 min-h-fit p-4 flex-1 placeholder:text-gray-500 disabled:opacity-100 focus-visible:ring-0 border-none ring-0 placeholder:font-mono placeholder:text-sm min-[420px]:placeholder:text-sm"
                     onChange={handleChange}
                     onKeyDown={handleKeyDown}
                     value={userInput}
