@@ -12,8 +12,8 @@ export const NavBar = () => {
             Kerin<span className="text-black">git</span>
           </span>
 
-          <div className="flex items-center justify-center w-fit gap-2.5">
-            <FaGithub className="h-4 w-4" /> GitHub
+          <div className="flex items-center justify-center w-fit gap-2.5 text-xl">
+            <FaGithub className="h-5 w-5" /> GitHub
           </div>
 
           {/* <MobileMenu /> */}

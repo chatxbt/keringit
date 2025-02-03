@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Quicksand } from "next/font/google";
+
 import "./globals.css";
 import { NavBar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
