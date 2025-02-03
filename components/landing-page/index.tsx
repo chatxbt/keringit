@@ -65,9 +65,7 @@ export function LandingPage() {
             />
           </svg>
           <h1 className="text-4xl xs:text-5xl md:text-6xl font-extrabold text-center mb-4">
-            Talk to Your GitHub
-            <br />
-            Repository
+            AI-Ready Code, <br /> Deployed Anywhere
           </h1>
           <p className="text-lg text-black/60 max-w-2xl mx-auto font-semibold">
             Transform your GitHub repositories into interactive documentation
