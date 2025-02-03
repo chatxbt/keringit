@@ -61,7 +61,7 @@ export const seoMetadata: Metadata = {
     "code documentation",
   ],
 
-  authors: [{ name: "ChatXBT Team", url: BASE_URL }],
+  authors: [{ name: "ChatXBT Team", url: "https://chatxbt.com" }],
   category: "Developer Tools",
   creator: "ChatXBT Team",
   publisher: "ChatXBT Team",

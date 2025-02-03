@@ -5,6 +5,7 @@ import { BASE_URL } from "../constants/seo";
 export const jsonLd: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  url: BASE_URL,
   name: "Keringit",
   image: `${BASE_URL}/og-image.png`,
   description:
@@ -12,7 +13,7 @@ export const jsonLd: WithContext<WebSite> = {
   provider: {
     "@type": "Organization",
     name: "ChatXBT Team",
-    url: BASE_URL,
+    url: "https://chatxbt.com",
   },
   creator: "ChatXBT Team",
   thumbnailUrl: `${BASE_URL}/og-image.png`,
