@@ -1,1 +1,1 @@
-export const BASE_URL = "hhtps://keringit.com";
+export const BASE_URL = "https://keringit.com";

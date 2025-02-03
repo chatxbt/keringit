@@ -11,10 +11,10 @@ export const jsonLd: WithContext<WebSite> = {
     "Transform GitHub repositories into AI-ready text digests with Keringit. Simplify codebase analysis, create interactive documentation, and deploy AI-assisted custom versions effortlessly.",
   provider: {
     "@type": "Organization",
-    name: "Keringit Team",
+    name: "ChatXBT Team",
     url: BASE_URL,
   },
-  creator: "Keringit Team",
+  creator: "ChatXBT Team",
   thumbnailUrl: `${BASE_URL}/og-image.png`,
   keywords: [
     "GitHub repository analyzer",

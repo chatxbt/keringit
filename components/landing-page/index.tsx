@@ -251,7 +251,7 @@ export function LandingPage() {
               </svg>
             </div>
 
-            <ScrollArea className="flex-1 min-h-[300px] max-h-[500px] bg-[#D8F3DC] overflow-y-auto mb-4 p-4 rounded-md box text-sm">
+            <ScrollArea className="flex-1 min-h-[300px] max-h-[500px] bg-[#D8F3DC] overflow-y-auto mb-4 p-4 rounded-md box">
               <div className="space-y-4">
                 <div className="flex gap-2 items-center">
                   <div className="bg-black rounded-full">
