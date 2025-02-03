@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
-const BASE_URL = "https://keringit.com";
+import { BASE_URL } from "../constants/seo";
 
 const VERSION = Date.now();
 
 export const seoMetadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title: "Keringit | Transform GitHub Repositories into AI-Ready Text Digests",
+  title: "Keringit | GitHub Repository Analysis & Documentation Generator",
   description:
-    "Keringit simplifies codebase analysis by transforming GitHub repositories into concise text digests. Perfect for feeding codebases into LLMs, creating interactive documentation, and deploying AI-assisted custom versions.",
+    "Transform GitHub repositories into comprehensive documentation with Keringit's AI-powered analysis. Generate digestible code summaries, interactive documentation, and deep insights into your codebase structure.",
 
   icons: {
     icon: [
@@ -24,40 +24,45 @@ export const seoMetadata: Metadata = {
   },
 
   keywords: [
-    "Keringit",
-    "GitHub repository analyzer",
-    "codebase text digest",
-    "AI-ready codebases",
+    "GitHub repository analysis",
+    "Code documentation generator",
+    "AI code analysis",
+    "Repository structure analyzer",
+    "Code documentation tool",
+    "GitHub code summary",
+    "Interactive documentation",
+    "Code digestion tool",
+    "Repository visualization",
+    "AI documentation assistant",
+    "Code structure analysis",
+    "GitHub integration",
+    "Developer documentation",
+    "Code insight generator",
+    "Repository breakdown",
     "LLM code integration",
-    "GitHub to text converter",
-    "codebase documentation",
-    "AI-assisted code analysis",
-    "interactive code documentation",
-    "GitHub repository insights",
-    "codebase structure breakdown",
-    "AI-powered code tools",
+    "Code documentation platform",
+    "GitHub repository explorer",
+    "AI code documentation",
+    "Code analysis platform",
+    "Keringit",
+    "GitHub",
+    "code analysis",
+    "documentation",
+    "artificial intelligence",
     "developer tools",
-    "codebase optimization",
-    "GitHub automation",
-    "AI code assistant",
-    "codebase ingestion",
-    "LLM-friendly code",
-    "GitHub repository insights",
-    "codebase simplification",
-    "AI-driven development",
-    "GitHub repository documentation",
-    "codebase analysis tool",
-    "AI code integration",
-    "developer productivity tools",
-    "GitHub repository management",
-    "codebase transformation",
-    "AI codebase assistant",
-    "GitHub repository digest",
-    "codebase insights",
+    "code structure",
+    "repository management",
+    "code insights",
+    "software documentation",
+    "code organization",
+    "development workflow",
+    "code understanding",
+    "repository analysis",
+    "code documentation",
   ],
 
-  authors: [{ name: "Keringit Team", url: BASE_URL }],
-  category: "Technology",
+  authors: [{ name: "ChatXBT Team", url: BASE_URL }],
+  category: "Developer Tools",
   creator: "ChatXBT Team",
   publisher: "ChatXBT Team",
 
@@ -79,15 +84,15 @@ export const seoMetadata: Metadata = {
     url: BASE_URL,
     siteName: "Keringit",
     title:
-      "Keringit | Transform GitHub Repositories into AI-Ready Text Digests",
+      "Keringit | Transform GitHub Repositories into Interactive Documentation",
     description:
-      "Keringit simplifies codebase analysis by transforming GitHub repositories into concise text digests. Perfect for feeding codebases into LLMs, creating interactive documentation, and deploying AI-assisted custom versions.",
+      "Convert any GitHub repository into a comprehensive, digestible text summary with Keringit's AI-powered analysis. Generate interactive documentation and gain deep insights into your codebase structure.",
     images: [
       {
         url: `${BASE_URL}/og-image.png?v=${VERSION}`,
         width: 1200,
         height: 630,
-        alt: "Keringit - GitHub Repository Analyzer",
+        alt: "Keringit - GitHub Repository Analysis & Documentation",
         type: "image/png",
       },
     ],
@@ -95,10 +100,9 @@ export const seoMetadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title:
-      "Keringit - Transform GitHub Repositories into AI-Ready Text Digests",
+    title: "Keringit - GitHub Repository Analysis & Documentation Generator",
     description:
-      "Simplify your codebase analysis with Keringit. Transform GitHub repositories into concise text digests for LLMs, interactive documentation, and AI-assisted deployments.",
+      "Transform your GitHub repositories into clear, comprehensive documentation. Keringit analyzes your codebase and generates interactive documentation with AI assistance.",
     creator: "@Keringit",
     images: [`${BASE_URL}/og-image.png?v=${VERSION}`],
   },

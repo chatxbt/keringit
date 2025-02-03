@@ -1,24 +1,36 @@
 import { WithContext, WebSite } from "schema-dts";
 
+import { BASE_URL } from "../constants/seo";
+
 export const jsonLd: WithContext<WebSite> = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Solcycle",
-  image: `https://keringit.com/og-image.png`,
+  name: "Keringit",
+  image: `${BASE_URL}/og-image.png`,
   description:
-    "Maximize your Solana potential with an AI Agent that delivers instant expertise, transaction guidance, and cutting-edge ecosystem insights.",
+    "Transform GitHub repositories into AI-ready text digests with Keringit. Simplify codebase analysis, create interactive documentation, and deploy AI-assisted custom versions effortlessly.",
   provider: {
     "@type": "Organization",
-    name: "Open Good for Solana",
-    url: "https://keringit.com",
+    name: "Keringit Team",
+    url: BASE_URL,
   },
-  creator: "ChatXBT Labs LTD.",
-  thumbnailUrl: `https://keringit.com/og-image.png`,
+  creator: "Keringit Team",
+  thumbnailUrl: `${BASE_URL}/og-image.png`,
   keywords: [
-    "Solana explorer",
-    "blockchain AI",
-    "cryptocurrency analysis",
-    "DeFi tools",
-    "blockchain navigation",
+    "GitHub repository analyzer",
+    "codebase text digest",
+    "AI-ready codebases",
+    "LLM code integration",
+    "GitHub to text converter",
+    "codebase documentation",
+    "AI-assisted code analysis",
+    "interactive code documentation",
+    "GitHub repository insights",
+    "codebase structure breakdown",
+    "AI-powered code tools",
+    "developer tools",
+    "codebase optimization",
+    "GitHub automation",
+    "AI code assistant",
   ],
 };
