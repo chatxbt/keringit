@@ -65,11 +65,15 @@ export function LandingPage() {
             />
           </svg>
           <h1 className="text-4xl xs:text-5xl md:text-6xl font-extrabold text-center mb-4">
-            AI-Ready Code, <br /> Deployed Anywhere
+            Prompt - Friendly <br />
+            Web3 Codebases
           </h1>
           <p className="text-lg text-black/60 max-w-2xl mx-auto font-semibold">
-            Transform your GitHub repositories into interactive documentation
-            and deploy custom versions with AI assistance.
+            {/* Transform your GitHub repositories into interactive documentation
+            and deploy custom versions with AI assistance. */}
+            Turn any web3 Git repository into interactive and collbarative
+            codebases, make custom versions and deploy to Base, Solana, MegaETH,
+            BTC or any L1.
           </p>
         </div>
 
@@ -117,25 +121,21 @@ export function LandingPage() {
                 />
               </div>
               {/* Range selector */}
-              <div className="w-[200px] sm:w-[200px]">
-                <label htmlFor="file_size" className="block text-gray-800 mb-1">
-                  Include files under:{" "}
-                  <span id="size_value" className="font-bold">
-                    3kb
-                  </span>
-                </label>
-                <div className="h-3.5 border-[3px] border-black relative bg-[#E76F51]">
-                  <div className="w-12 bg-[#B7E4C7] cursor-pointer absolute top-1/2 -translate-y-1/2 right-0 h-5 box p-0 rounded-none" />
-                </div>
-              </div>
             </div>
 
             {/* hotkeys */}
             <div className="space-y-2">
-              <p>Want to see how it works? Try these example repositories:</p>
+              <p>See it in Action? Try these example repositories:</p>
 
               <div className="flex w-full flex-wrap gap-4">
-                {["UniswapV3", "Sushiswap"].map((select, i) => (
+                {[
+                  "Keringit",
+                  "UniswapV4",
+                  "Layerzer0",
+                  "Aave",
+                  "MorphoV1.1",
+                  "PendleV2",
+                ].map((select, i) => (
                   <button
                     key={i}
                     className="px-3 py-1 font-bold bg-[#D8F3DC] hover:bg-[#95B8A1] border-[3px] border-black rounded-sm"
@@ -198,9 +198,9 @@ export function LandingPage() {
                     </div>
                   </div>
                   <div className="flex flex-col gap-5 mt-20">
-                    <div className="font-bold text-xl flex justify-between items-center w-full">
+                    <div className="font-bold text-lg flex justify-between items-center w-full">
                       Directory Structure
-                      <ThemeButton className="text-base w-fit py-2 text-black bg-[#F4A261]">
+                      <ThemeButton className="text-base w-fit  text-black bg-[#F4A261]">
                         <Copy />
                         Copy All
                       </ThemeButton>
@@ -233,7 +233,7 @@ export function LandingPage() {
           <div className="flex flex-col">
             <div className="relative flex justify-between">
               <h2 className="text-xl font-semibold mb-1">
-                Ask <strong className="font-bold">Kerin</strong>!😊
+                Chat <strong className="font-bold">Code</strong>!😊
               </h2>
               <svg
                 viewBox="0 0 100 100"
@@ -266,7 +266,7 @@ export function LandingPage() {
                   <div className="flex-1 text-left font-semibold max-w-fit">
                     <Typewriter
                       options={{
-                        strings: "Hi, I’m Kerin! How can I help you today?",
+                        strings: "What about this repo do you want to know?",
                         autoStart: true,
                         delay: 10,
                         cursor: "",
