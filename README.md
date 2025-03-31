@@ -17,10 +17,10 @@ you can clone any web3 project and deploy it to your preferred L1/L2 of choice l
   <img src="https://github.com/user-attachments/assets/162f78f4-08d1-4f39-b7b7-8843c4328e39" alt="Keringit.ai feature" width="100%" />
 </div>
 
-- Deploying and running a Node,
-- Understanding complex smartcontracts
-- Easy contribution to existing project of choice
-- Running your own fork of a project in a different blockchain
+- Deploying and Running a Node with one click.
+- Understanding complex smart contracts by just chatting.
+- Easily contribute to any existing project of choice.
+- No devs needed in helping you fork protocols across chains.
 
 ## Getting Started
 
