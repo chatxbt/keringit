@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ThemeButton } from "../ui/theme-button";
-import { GitBranch, GitMerge, GitCompare } from "lucide-react";
+import { GitBranch, GitCompare } from "lucide-react";
 
 export function RepoComparison() {
   const [showDiff, setShowDiff] = useState(false);

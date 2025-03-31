@@ -4,9 +4,6 @@ import { HeroSection } from "./hero-section";
 import { RepoForm } from "./repo-form";
 import { ResultPanel } from "./result-panel";
 import { ChatPanel } from "./chat-panel";
-import { DeploymentConfig } from "./deployment-config";
-import { RepoComparison } from "./repo-comparison";
-import { DeploymentHistory } from "./deployment-history";
 
 export function LandingPage() {
   return (
@@ -17,13 +14,10 @@ export function LandingPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-16">
           <div className="space-y-8">
-            <ResultPanel />
-            {/* <DeploymentConfig /> */}
-            {/* <DeploymentHistory /> */}
+            <ChatPanel />
           </div>
           <div className="space-y-8">
-            <ChatPanel />
-            {/* <RepoComparison /> */}
+            <ResultPanel />
           </div>
         </div>
       </div>

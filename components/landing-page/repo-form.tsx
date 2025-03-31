@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BookOpen, ChevronDown } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { ThemeButton } from "../ui/theme-button";
 
 const EXAMPLE_REPOS = [
@@ -46,36 +46,8 @@ export function RepoForm() {
           </ThemeButton>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-x-16 gap-y-4">
-          <div className="flex shadow-theme bg-white rounded overflow-hidden box p-0">
-            <div className="relative border-r-[3px] border-black w-fit">
-              <select
-                name="options"
-                id="options"
-                defaultValue="exclude"
-                className="p-2 pr-8 bg-[#E6E8EB] text-black [-webkit-appearance:none] [-moz-appearance:none] [&::-ms-expand]:hidden outline-none !rounded-none"
-                aria-label="Include or exclude files"
-              >
-                <option value="exclude">Exclude</option>
-                <option value="include">Include</option>
-              </select>
-              <div className="absolute inset-y-0 right-2 flex items-center pointer-events-none">
-                <ChevronDown className="w-4 h-4 text-gray-600" />
-              </div>
-            </div>
-            <input
-              type="text"
-              name="file_type"
-              id="file_type"
-              placeholder="*.md, src/"
-              className="outline-none p-2 min-w-[200px] placeholder:text-gray-400/80"
-              aria-label="File patterns to include or exclude"
-            />
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          <p>See it in Action? Try these example repositories:</p>
+        <div className="space-y-2 font-medium">
+          <p>See it in Action? Try forking these example repositories:</p>
 
           <div className="flex w-full flex-wrap gap-4">
             {EXAMPLE_REPOS.map((repo, i) => (

@@ -10,7 +10,24 @@ export function ResultPanel() {
 
   return (
     <div>
-      <h2 className="font-bold text-xl mb-1">Result</h2>
+      <div className="relative flex justify-between">
+        <h2 className="font-bold text-xl mb-1">Result</h2>
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-auto w-20 sm:w-24 md:w-28 flex-shrink-0 absolute -right-4 -bottom-12 md:-bottom-16 z-10 pointer-events-none"
+          aria-hidden="true"
+        >
+          <circle cx="50" cy="50" r="45" fill="none" />
+          <path
+            d="M50 30 C60 20, 70 20, 70 30 C70 40, 50 50, 50 50 C50 50, 30 40, 30 30 C30 20, 40 20, 50 30 M50 50 C60 40, 70 40, 70 50 C70 60, 50 70, 50 70 C50 70, 30 60, 30 50 C30 40, 40 40, 50 50"
+            fill="#FF006E"
+            stroke="black"
+            strokeWidth="2"
+          />
+        </svg>
+      </div>
 
       <div className="box p-4 bg-white">
         <div className="box mb-4 p-1 flex gap-1">

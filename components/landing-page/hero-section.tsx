@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 export function HeroSection() {
   return (
     <div className="text-center mb-12 relative">
@@ -26,13 +24,13 @@ export function HeroSection() {
         />
       </svg>
       <h1 className="text-4xl xs:text-5xl md:text-6xl font-extrabold text-center mb-4">
-        Prompt - Friendly <br />
-        Web3 Codebases
+        Fork Any <span className="text-[#ea580b]">#Web3</span> Project <br />
+        in One Click
       </h1>
       <p className="text-lg text-black/60 max-w-2xl mx-auto font-semibold">
-        Turn any web3 Git repository into interactive and collaborative
-        codebases, make custom versions and deploy to Base, Solana, MegaETH, BTC
-        or any L1.
+        Give URL and it will clone any web3 GitHub project / smart contract,
+        make custom versions with text, and with a single click{" "}
+        <span className="font-bolder">deploy</span> to any blockchain of choice.
       </p>
     </div>
   );

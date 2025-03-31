@@ -1,4 +1,4 @@
-import { Send } from "lucide-react";
+import { Send, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import Image from "next/image";
@@ -25,23 +25,38 @@ export function ChatPanel() {
     <div className="flex flex-col">
       <div className="relative flex justify-between">
         <h2 className="text-xl font-semibold mb-1">
-          Chat <strong className="font-bold">Code</strong>!😊
+          Ask <strong className="font-bold">Kerin</strong>!😊
         </h2>
-        <svg
-          viewBox="0 0 100 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-auto w-20 sm:w-24 md:w-28 flex-shrink-0 absolute -right-4 -bottom-12 md:-bottom-16 z-10 pointer-events-none"
-          aria-hidden="true"
-        >
-          <circle cx="50" cy="50" r="45" fill="none" />
-          <path
-            d="M50 30 C60 20, 70 20, 70 30 C70 40, 50 50, 50 50 C50 50, 30 40, 30 30 C30 20, 40 20, 50 30 M50 50 C60 40, 70 40, 70 50 C70 60, 50 70, 50 70 C50 70, 30 60, 30 50 C30 40, 40 40, 50 50"
-            fill="#FF006E"
-            stroke="black"
-            strokeWidth="2"
-          />
-        </svg>
+        <div className="relative group">
+          <button
+            className="px-4 py-2 font-bold bg-[#d8f3dc] text-black border-[3px] border-black rounded-sm 
+            flex items-center gap-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] 
+            hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none
+            transition-all duration-200 cursor-not-allowed opacity-80"
+            disabled
+          >
+            <Rocket className="h-5 w-5" />
+            Deploy
+          </button>
+
+          {/* Tooltip */}
+          <div
+            className="absolute -top-12 left-1/2 -translate-x-1/2 
+            bg-black text-white px-3 py-1.5 rounded-md text-sm font-medium
+            opacity-0 group-hover:opacity-100 transition-opacity duration-200
+            border-2 border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,0.3)]
+            pointer-events-none whitespace-nowrap"
+          >
+            Coming Soon! 🚀
+            {/* Arrow */}
+            <div
+              className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 
+              border-l-[6px] border-l-transparent
+              border-r-[6px] border-r-transparent
+              border-t-[6px] border-t-black"
+            ></div>
+          </div>
+        </div>
       </div>
 
       <ScrollArea className="flex-1 min-h-[300px] max-h-[500px] bg-[#D8F3DC] overflow-y-auto mb-4 p-4 rounded-md box">
@@ -59,7 +74,7 @@ export function ChatPanel() {
             <div className="flex-1 text-left font-semibold max-w-fit">
               <Typewriter
                 options={{
-                  strings: "What about this repo do you want to know?",
+                  strings: "Ask anything about the git repo?",
                   autoStart: true,
                   delay: 10,
                   cursor: "",
@@ -77,7 +92,7 @@ export function ChatPanel() {
         >
           <div className="flex-1 w-full box bg-white flex flex-col sm:flex-row items-center justify-start">
             <Textarea
-              placeholder="Ask about the repository or request changes..."
+              placeholder="Ask about the project or code"
               className="w-full resize-none overflow-y-auto max-h-28 min-h-fit p-4 flex-1 placeholder:text-gray-500 disabled:opacity-100 focus-visible:ring-0 border-none ring-0 placeholder:font-mono placeholder:text-xs min-[420px]:placeholder:text-sm"
               onChange={handleChange}
               onKeyDown={handleKeyDown}
