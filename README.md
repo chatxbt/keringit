@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://keringit.ai/banner.png" alt="Keringit.ai Banner" width="100%" />
+  <img src="https://github.com/user-attachments/assets/a0b8a46a-65e7-4871-b0b4-9be6825fa841" alt="Keringit.ai header" width="100%" />
 </div>
 
 # Keringit.ai
@@ -9,11 +9,11 @@
 Keringit.ai is an OS that simplifies forking, customizing and deploying any web3 project and smart contracts. With just a GitHub URL.
 you can clone any web3 project and deploy it to your preferred L1/L2 of choice like Ethereum, Arbitrum, Base, Optimisim, Polygon etc with a single click. No complex setup, no coding skills needed. It's web3 made easy.
 
-<div align="center">
-  <img src="https://keringit.ai/demo.gif" alt="Keringit.ai Demo" width="800px" />
-</div>
-
 ## UseCase
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/162f78f4-08d1-4f39-b7b7-8843c4328e39" alt="Keringit.ai feature" width="100%" />
+</div>
 
 - Deploying and running a Node,
 - Understanding complex smartcontracts
