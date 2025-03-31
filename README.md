@@ -2,9 +2,17 @@
 # Keringit.ai
 **Fork Any Web3 Project in One Click**
 
-Keringit.ai is an OS that simplifies forking and deploying web3 projects and smart contracts. With just a GitHub URL, you can clone any web3 project and deploy it to your preferred L1/L2 like Ethereum, Arbitrum, Base, Optimisim, Polygon etc a single click. No complex setup, no coding skills needed. It's web3 made easy.
+Keringit.ai is an OS that simplifies forking, customizing and deploying any web3 project and smart contracts. With just a GitHub URL.
+you can clone any web3 project and deploy it to your preferred L1/L2 of choice  like Ethereum, Arbitrum, Base, Optimisim, Polygon etc with a single click. No complex setup, no coding skills needed. It's web3 made easy.
 
 This repository contains the codebase
+
+
+## UseCase
+- Deploying and running a Node,
+- Understanding complex smartcontracts 
+- Easy contribution to existing project of choice
+- Running your own fork of a project in a different blockchain
 
 ## Getting Started
 
